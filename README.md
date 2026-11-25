@@ -1,6 +1,6 @@
 # Jaii Mukundh A — Portfolio
 
-Personal portfolio site for Jaii Mukundh A, focused on ML / LLM engineering, structured extraction, retrieval, and production MLOps.
+Personal portfolio site for Jaii Mukundh A, focused on software engineering, ML / AI, structured extraction, retrieval, and production MLOps.
 
 **Live:** https://jaiimukundh.github.io/
 
