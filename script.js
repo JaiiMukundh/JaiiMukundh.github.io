@@ -6,6 +6,9 @@
   const nav = document.getElementById("nav");
   const menuToggle = document.getElementById("menu-toggle");
   const navLinks = document.getElementById("nav-links");
+  const brand = document.querySelector(".brand");
+  const pageMain = document.querySelector("main");
+  const pageFooter = document.querySelector(".footer");
   const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* ---------- Nav state ---------- */
@@ -18,70 +21,78 @@
   /* ---------- Mobile menu ---------- */
   const closeMenu = () => {
     nav.classList.remove("open");
+    document.body.classList.remove("menu-open");
     menuToggle.setAttribute("aria-expanded", "false");
     menuToggle.setAttribute("aria-label", "Open menu");
+    if (pageMain) pageMain.inert = false;
+    if (pageFooter) pageFooter.inert = false;
   };
 
   menuToggle.addEventListener("click", () => {
     const isOpen = nav.classList.toggle("open");
+    document.body.classList.toggle("menu-open", isOpen);
     menuToggle.setAttribute("aria-expanded", String(isOpen));
     menuToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+    if (pageMain) pageMain.inert = isOpen;
+    if (pageFooter) pageFooter.inert = isOpen;
   });
 
   navLinks.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", closeMenu);
   });
 
+  if (brand) brand.addEventListener("click", closeMenu);
+
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") closeMenu();
+    if (event.key === "Escape" && nav.classList.contains("open")) {
+      closeMenu();
+      menuToggle.focus();
+    }
   });
 
   window.addEventListener("resize", () => {
-    if (window.innerWidth > 900) closeMenu();
+    if (window.innerWidth > 980) closeMenu();
   });
 
   /* ---------- Scroll reveal ---------- */
-  const revealEls = Array.from(document.querySelectorAll(".reveal"));
+  const revealTargets = document.querySelectorAll(
+    ".section-head, .about-grid, .exp-row, .case, .pub-grid, .toolkit-grid, .contact .wrap > *"
+  );
 
-  revealEls.forEach((el) => {
-    const siblings = Array.from(el.parentElement.children).filter((child) =>
-      child.classList.contains("reveal")
-    );
-    const index = siblings.indexOf(el);
-    if (index > 0) el.style.setProperty("--delay", `${Math.min(index * 70, 350)}ms`);
-  });
+  if (!prefersReduced && "IntersectionObserver" in window) {
+    revealTargets.forEach((el) => el.classList.add("reveal"));
 
-  if (prefersReduced || !("IntersectionObserver" in window)) {
-    revealEls.forEach((el) => el.classList.add("visible"));
-  } else {
     const revealObserver = new IntersectionObserver(
       (entries, observer) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
-          entry.target.classList.add("visible");
+          entry.target.classList.add("is-visible");
           observer.unobserve(entry.target);
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.08, rootMargin: "0px 0px -60px 0px" }
     );
 
-    revealEls.forEach((el) => revealObserver.observe(el));
+    revealTargets.forEach((el) => revealObserver.observe(el));
   }
 
   /* ---------- Active nav link ---------- */
-  const sections = ["home", "about", "experience", "projects", "publication", "contact"]
+  const sectionIds = ["home", "about", "experience", "work", "publication", "toolkit", "contact"];
+  const sections = sectionIds
     .map((id) => document.getElementById(id))
     .filter(Boolean);
 
   const linkFor = new Map();
   navLinks.querySelectorAll("a").forEach((link) => {
-    const id = link.getAttribute("href").replace("#", "");
-    linkFor.set(id, link);
+    const href = link.getAttribute("href") || "";
+    if (href.startsWith("#")) linkFor.set(href.slice(1), link);
   });
 
   let activeId = "";
+  let ticking = false;
+
   const updateActiveLink = () => {
-    const marker = window.scrollY + window.innerHeight * 0.32;
+    const marker = window.scrollY + window.innerHeight * 0.34;
     let current = sections[0]?.id || "";
 
     for (const section of sections) {
@@ -96,7 +107,6 @@
     if (activeLink) activeLink.classList.add("active");
   };
 
-  let ticking = false;
   window.addEventListener(
     "scroll",
     () => {
@@ -109,61 +119,9 @@
     },
     { passive: true }
   );
+
+  window.addEventListener("resize", updateActiveLink);
   updateActiveLink();
-
-  /* ---------- Card spotlight ---------- */
-  if (!prefersReduced && window.matchMedia("(pointer: fine)").matches) {
-    document.querySelectorAll(".project").forEach((card) => {
-      card.addEventListener("pointermove", (event) => {
-        const rect = card.getBoundingClientRect();
-        card.style.setProperty("--mx", `${event.clientX - rect.left}px`);
-        card.style.setProperty("--my", `${event.clientY - rect.top}px`);
-      });
-    });
-  }
-
-  /* ---------- Hero orb parallax ---------- */
-  const hero = document.getElementById("home");
-  const orbWrap = document.getElementById("orb-wrap");
-
-  if (orbWrap && hero && !prefersReduced && window.matchMedia("(pointer: fine)").matches) {
-    let targetX = 0;
-    let targetY = 0;
-    let currentX = 0;
-    let currentY = 0;
-    let rafId = null;
-
-    const animate = () => {
-      currentX += (targetX - currentX) * 0.08;
-      currentY += (targetY - currentY) * 0.08;
-      orbWrap.style.transform = `translate3d(${currentX.toFixed(2)}px, ${currentY.toFixed(2)}px, 0)`;
-
-      if (Math.abs(targetX - currentX) > 0.05 || Math.abs(targetY - currentY) > 0.05) {
-        rafId = requestAnimationFrame(animate);
-      } else {
-        rafId = null;
-      }
-    };
-
-    const schedule = () => {
-      if (rafId === null) rafId = requestAnimationFrame(animate);
-    };
-
-    hero.addEventListener("pointermove", (event) => {
-      const rect = hero.getBoundingClientRect();
-      const x = (event.clientX - rect.left) / rect.width - 0.5;
-      const y = (event.clientY - rect.top) / rect.height - 0.5;
-      targetX = x * 18;
-      targetY = y * 18;
-      schedule();
-    });
-
-    hero.addEventListener("pointerleave", () => {
-      targetX = 0;
-      targetY = 0;
-      schedule();
-    });
-  }
 
   /* ---------- Year ---------- */
   const year = document.getElementById("year");

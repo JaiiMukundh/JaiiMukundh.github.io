@@ -11,10 +11,11 @@ Plain HTML, CSS, and JavaScript. No build step, no frameworks. Deployed with Git
 ## Structure
 
 - `index.html` — page content
-- `styles.css` — layout, theme, responsive styles, motion
-- `script.js` — nav, scroll reveal, active links, card spotlight, orb parallax
+- `styles.css` — paper-and-ink visual system, layout, responsive styles, motion
+- `script.js` — nav, mobile menu, scroll reveal, active links
 - `resume.pdf` — current résumé
 - `paper.pdf` — accepted AIEI 2027 paper
+- `paper-page.webp` / `paper-page.png` — first-page preview of the paper
 - `favicon.svg` — site icon
 
 ## Local preview
