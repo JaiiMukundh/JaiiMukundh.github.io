@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jaii Mukundh A — ML &amp; LLM Engineering</title>
+  <meta name="description" content="Jaii Mukundh A is a machine learning engineer working on small language models, structured extraction, retrieval, and production MLOps." />
+  <meta name="theme-color" content="#06080f" />
+
+  <meta property="og:title" content="Jaii Mukundh A — ML &amp; LLM Engineering" />
+  <meta property="og:description" content="Small language models, structured extraction, retrieval, and the MLOps that keeps them honest." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://jaiimukundh.github.io/" />
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="noise" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#home" aria-label="Jaii Mukundh A — home">
+        <span class="brand-mark">JM</span>
+        <span class="brand-text">Jaii Mukundh<span class="brand-dot">.</span></span>
+      </a>
+
+      <nav class="nav-links" id="nav-links" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Work</a>
+        <a href="#publication">Publication</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn btn-ghost nav-resume" href="resume.pdf" target="_blank" rel="noopener">Résumé <span aria-hidden="true">↗</span></a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="glow glow-a" aria-hidden="true"></div>
+      <div class="glow glow-b" aria-hidden="true"></div>
+
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <div class="status reveal">
+            <span class="status-dot"></span>
+            Open to ML / LLM engineering roles
+          </div>
+
+          <h1 class="reveal">
+            I build AI systems that <span class="grad">hold up outside the demo.</span>
+          </h1>
+
+          <p class="lede reveal">
+            I'm <strong>Jaii Mukundh A</strong> — a machine learning engineer working on small language models,
+            structured extraction, retrieval, and the MLOps that keeps them honest.
+          </p>
+
+          <div class="hero-actions reveal">
+            <a class="btn btn-primary" href="#projects">Explore my work <span aria-hidden="true">↓</span></a>
+            <a class="btn btn-ghost" href="resume.pdf" target="_blank" rel="noopener">Download résumé <span aria-hidden="true">↗</span></a>
+          </div>
+
+          <div class="hero-meta reveal">
+            <span>Bengaluru, India</span>
+            <span class="meta-sep" aria-hidden="true">/</span>
+            <span>B.Tech CSE, MIT Manipal</span>
+            <span class="meta-sep" aria-hidden="true">/</span>
+            <span>BS Data Science, IIT Madras</span>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" aria-hidden="true">
+          <div class="orb-wrap" id="orb-wrap">
+            <div class="orb-ring ring-a"></div>
+            <div class="orb-ring ring-b"></div>
+            <div class="orb">
+              <div class="orb-inner">
+                <span class="orb-mono">JM</span>
+                <span class="orb-caption">ML / LLM</span>
+              </div>
+            </div>
+            <span class="float-chip chip-1">LoRA</span>
+            <span class="float-chip chip-2">RAG</span>
+            <span class="float-chip chip-3">MLOps</span>
+            <span class="float-chip chip-4">PyTorch</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-stats reveal" aria-label="Selected results">
+        <div class="stat">
+          <span class="stat-value">18.46M</span>
+          <span class="stat-label">LoRA trainable params</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">100%</span>
+          <span class="stat-label">schema-valid JSON</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">17×</span>
+          <span class="stat-label">cheaper than a 70B stack</span>
+        </div>
+        <div class="stat stat-note">
+          <span class="stat-label">Selected results from recent work</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow"><span class="eyebrow-index">01</span> About</span>
+          <h2 class="section-title">Research-minded.<br />Production-obsessed.</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-copy reveal">
+            <p>
+              I'm a computer science undergraduate at <strong>MIT Manipal</strong> and <strong>IIT Madras</strong>,
+              working at the intersection of applied research and engineering. My focus is simple:
+              make small models do reliable work.
+            </p>
+            <p>
+              At FORMCEPT, I built a two-stage extraction pipeline that runs on commodity CPUs —
+              DistilBERT triage, a LoRA-adapted Qwen2.5-1.5B extractor, FSM-constrained decoding,
+              and grounding checks. The work was accepted at <strong>AIEI 2027</strong>.
+            </p>
+            <p>
+              I care about systems that are measurable: schema validity, grounded outputs, drift
+              detection, and cost per document — not just benchmark scores.
+            </p>
+
+            <div class="now-card">
+              <div class="now-head">
+                <span class="pulse"></span>
+                <span class="mono-label">Currently</span>
+              </div>
+              <p class="now-title">Summer Intern — Deep Learning &amp; LLM Engineering</p>
+              <p class="now-sub">FORMCEPT Technologies &amp; Solutions · Bengaluru · May – Jul 2026</p>
+            </div>
+          </div>
+
+          <div class="edu-stack">
+            <article class="edu-card reveal">
+              <div class="edu-top">
+                <span class="edu-year">2024 — 2028</span>
+                <span class="edu-badge">CGPA 8.35 / 10</span>
+              </div>
+              <h3>B.Tech, Computer Science &amp; Engineering</h3>
+              <p class="edu-school">Manipal Institute of Technology, Manipal</p>
+              <div class="chip-row">
+                <span class="chip">Linear Algebra (A+)</span>
+                <span class="chip">Calculus (A)</span>
+                <span class="chip">Database Systems (A)</span>
+                <span class="chip">Probability &amp; Statistics</span>
+                <span class="chip">Artificial Intelligence</span>
+              </div>
+            </article>
+
+            <article class="edu-card reveal">
+              <div class="edu-top">
+                <span class="edu-year">2024 — 2028</span>
+                <span class="edu-badge">Dual degree</span>
+              </div>
+              <h3>BS, Data Science &amp; Applications</h3>
+              <p class="edu-school">IIT Madras · Diploma level, foundation completed</p>
+              <div class="chip-row">
+                <span class="chip">ML Foundations (A)</span>
+                <span class="chip">Programming &amp; Data Structures (A)</span>
+                <span class="chip">Statistical Modeling</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow"><span class="eyebrow-index">02</span> Experience</span>
+          <h2 class="section-title">Where I've shipped.</h2>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-meta">
+              <span class="mono-label">May 2026 — Jul 2026</span>
+              <span class="timeline-place">Bengaluru</span>
+            </div>
+            <div class="timeline-body">
+              <h3>Summer Intern — Deep Learning &amp; LLM Engineering</h3>
+              <p class="timeline-company">FORMCEPT Technologies &amp; Solutions Pvt. Ltd.</p>
+              <ul>
+                <li>Implemented core deep learning architectures from scratch in PyTorch — FFN, CNN, RNN/LSTM, multi-head self-attention, BERT, and autoregressive GPT — culminating in a working MicroGPT training pipeline.</li>
+                <li>Applied LoRA, QLoRA, and post-training quantization to adapt small language models for domain-specific tasks, and designed reproducible evaluation benchmarks for supply-chain entity extraction.</li>
+              </ul>
+              <div class="chip-row">
+                <span class="chip">PyTorch</span>
+                <span class="chip">LoRA</span>
+                <span class="chip">QLoRA</span>
+                <span class="chip">Quantization</span>
+                <span class="chip">Transformers</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-meta">
+              <span class="mono-label">Oct 2024 — Oct 2025</span>
+              <span class="timeline-place">Manipal</span>
+            </div>
+            <div class="timeline-body">
+              <h3>Working Committee Member — Backend &amp; Data Workflows</h3>
+              <p class="timeline-company">Manipal Information Security Team (MIST)</p>
+              <ul>
+                <li>Engineered Python and Flask backend APIs and SQLAlchemy data pipelines for hospital-management workflows, enforcing schema integrity and role-based query access.</li>
+              </ul>
+              <div class="chip-row">
+                <span class="chip">Python</span>
+                <span class="chip">Flask</span>
+                <span class="chip">SQLAlchemy</span>
+                <span class="chip">SQL</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow"><span class="eyebrow-index">03</span> Selected Work</span>
+          <h2 class="section-title">Systems, not just models.</h2>
+        </div>
+
+        <article class="project project-featured reveal">
+          <div class="project-top">
+            <div>
+              <span class="project-kicker">Featured · AIEI 2027</span>
+              <h3>Structured Event Extraction with Small Language Models</h3>
+              <p class="project-sub">Supply Chain Event Extraction Pipeline · FORMCEPT Internship</p>
+            </div>
+            <div class="project-links">
+              <a class="icon-link" href="https://github.com/formcept/whiteboard/tree/master/deep-learning/event-extraction" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+              <a class="icon-link" href="paper.pdf" target="_blank" rel="noopener">Paper <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+
+          <p class="project-desc">
+            A resource-efficient, two-stage pipeline that turns unstructured supply-chain news into
+            schema-valid disruption events. DistilBERT triage filters candidate chunks, a LoRA-adapted
+            Qwen2.5-1.5B model extracts events, and Outlines FSM decoding guarantees structurally valid JSON.
+          </p>
+
+          <ul class="project-points">
+            <li>18.46M LoRA adapters (1.2% of the 1.54B base), trained on 115 documents from a 175-document annotated extraction set.</li>
+            <li>Schema-valid JSON <strong>23.33% → 100%</strong>; overall extraction F1 <strong>46.81% → 69.24%</strong>; Top-Level F1 <strong>58.40% → 83.97%</strong>.</li>
+            <li>DistilBERT triage runs in ~15 ms/chunk vs ~14.32 s for Qwen, routing ~80% of enterprise documents away and cutting Qwen workload ~5×.</li>
+          </ul>
+
+          <div class="metric-row">
+            <div class="metric"><span class="metric-value">69.24%</span><span class="metric-label">overall F1</span></div>
+            <div class="metric"><span class="metric-value">100%</span><span class="metric-label">schema-valid</span></div>
+            <div class="metric"><span class="metric-value">~17×</span><span class="metric-label">lower cost</span></div>
+            <div class="metric"><span class="metric-value">~5×</span><span class="metric-label">less Qwen workload</span></div>
+          </div>
+
+          <div class="chip-row">
+            <span class="chip">PyTorch</span>
+            <span class="chip">Hugging Face</span>
+            <span class="chip">Qwen2.5-1.5B</span>
+            <span class="chip">LoRA</span>
+            <span class="chip">Outlines</span>
+            <span class="chip">DistilBERT</span>
+          </div>
+        </article>
+
+        <div class="project-grid">
+          <article class="project reveal">
+            <div class="project-top">
+              <div>
+                <span class="project-kicker">MLOps · Drift recovery</span>
+                <h3>MLPlatform</h3>
+                <p class="project-sub">Self-healing credit-risk platform</p>
+              </div>
+              <a class="icon-link" href="https://github.com/JaiiMukundh/mlplatform" target="_blank" rel="noopener" aria-label="MLPlatform on GitHub">GitHub <span aria-hidden="true">↗</span></a>
+            </div>
+
+            <p class="project-desc">
+              A production-style inference service on Azure AKS with Feast online features, MLflow
+              model versioning, and asynchronous PostgreSQL prediction logging. PSI and KS drift
+              monitors trigger retraining, and every candidate must clear an evaluation gate before release.
+            </p>
+
+            <div class="metric-row">
+              <div class="metric"><span class="metric-value">0.6714 → 0.8349</span><span class="metric-label">ROC-AUC in a drift drill</span></div>
+            </div>
+
+            <div class="chip-row">
+              <span class="chip">Python</span>
+              <span class="chip">FastAPI</span>
+              <span class="chip">Feast</span>
+              <span class="chip">MLflow</span>
+              <span class="chip">Kubernetes</span>
+              <span class="chip">Terraform</span>
+              <span class="chip">Azure AKS</span>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <div class="project-top">
+              <div>
+                <span class="project-kicker">Retrieval · Evidence grounding</span>
+                <h3>RouteSentinel</h3>
+                <p class="project-sub">Freight cost anomaly detection</p>
+              </div>
+              <a class="icon-link" href="https://github.com/JaiiMukundh/routesentinel-freighttiger" target="_blank" rel="noopener" aria-label="RouteSentinel on GitHub">GitHub <span aria-hidden="true">↗</span></a>
+            </div>
+
+            <p class="project-desc">
+              A statistical route-anomaly detector built on pooled cost-per-tonne-km, trailing route
+              history, and peer baselines. BM25 and bge-small rankings are fused with RRF, while a
+              deterministic five-gate evidence check verifies every LLM explanation against source facts.
+            </p>
+
+            <div class="metric-row">
+              <div class="metric"><span class="metric-value">1.0</span><span class="metric-label">hybrid MRR</span></div>
+              <div class="metric"><span class="metric-value">13/13</span><span class="metric-label">verdicts</span></div>
+              <div class="metric"><span class="metric-value">9/9</span><span class="metric-label">red-team</span></div>
+            </div>
+
+            <div class="chip-row">
+              <span class="chip">Python</span>
+              <span class="chip">BM25</span>
+              <span class="chip">bge-small</span>
+              <span class="chip">RRF</span>
+              <span class="chip">FastAPI</span>
+              <span class="chip">SQLite</span>
+              <span class="chip">Qwen2.5</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="publication">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow"><span class="eyebrow-index">04</span> Publication</span>
+          <h2 class="section-title">Peer-reviewed. Practical.</h2>
+        </div>
+
+        <article class="pub-card reveal">
+          <div class="pub-main">
+            <span class="pub-badge">Accepted · AIEI 2027</span>
+            <h3>Building Resource-Efficient Structured Event Extraction Systems with Small Language Models</h3>
+            <p class="pub-authors">Jaii Mukundh A, Anuj Kumar, Suresh Srinivasan — FORMCEPT Technologies &amp; Solutions Pvt. Ltd.</p>
+            <p class="pub-venue">2027 IEEE International Conference on AI Engineering and Innovations (AIEI 2027) · Bangalore · 21–23 Jan 2027</p>
+            <p class="pub-abstract">
+              A two-stage pipeline combining high-recall DistilBERT triage, LoRA adaptation of
+              Qwen2.5-1.5B, FSM-constrained decoding, and selective hallucination validation for
+              enterprise event extraction — with a 17× inference-cost reduction over hosting a 70B model.
+            </p>
+          </div>
+          <div class="pub-actions">
+            <a class="btn btn-primary" href="paper.pdf" target="_blank" rel="noopener">Read the paper <span aria-hidden="true">↗</span></a>
+            <a class="btn btn-ghost" href="https://www.aiengineering-conference.org/" target="_blank" rel="noopener">Conference site <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow"><span class="eyebrow-index">05</span> Toolkit</span>
+          <h2 class="section-title">What I work with.</h2>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-card reveal">
+            <span class="skill-index">01</span>
+            <h3>Deep Learning &amp; LLMs</h3>
+            <div class="chip-row">
+              <span class="chip">PyTorch</span>
+              <span class="chip">Hugging Face</span>
+              <span class="chip">PEFT (LoRA, QLoRA)</span>
+              <span class="chip">Quantization</span>
+              <span class="chip">Outlines</span>
+              <span class="chip">RAG</span>
+              <span class="chip">Hybrid retrieval</span>
+              <span class="chip">BM25</span>
+              <span class="chip">Dense embeddings</span>
+              <span class="chip">RRF</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <span class="skill-index">02</span>
+            <h3>ML &amp; Data</h3>
+            <div class="chip-row">
+              <span class="chip">scikit-learn</span>
+              <span class="chip">Pandas</span>
+              <span class="chip">NumPy</span>
+              <span class="chip">SQL</span>
+              <span class="chip">PSI / KS drift monitoring</span>
+              <span class="chip">Statistical modeling</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <span class="skill-index">03</span>
+            <h3>MLOps &amp; Systems</h3>
+            <div class="chip-row">
+              <span class="chip">MLflow</span>
+              <span class="chip">Feast</span>
+              <span class="chip">FastAPI</span>
+              <span class="chip">Kubernetes</span>
+              <span class="chip">Terraform</span>
+              <span class="chip">Docker</span>
+              <span class="chip">GitHub Actions</span>
+              <span class="chip">Azure AKS</span>
+              <span class="chip">PostgreSQL</span>
+              <span class="chip">Redis</span>
+              <span class="chip">Git</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <span class="skill-index">04</span>
+            <h3>Languages</h3>
+            <div class="chip-row">
+              <span class="chip">Python</span>
+              <span class="chip">SQL</span>
+              <span class="chip">C</span>
+              <span class="chip">Java</span>
+              <span class="chip">TypeScript</span>
+              <span class="chip">JavaScript</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="contact-inner reveal">
+          <span class="eyebrow"><span class="eyebrow-index">06</span> Contact</span>
+          <h2 class="contact-title">Let's build something<br /><span class="grad">that holds up.</span></h2>
+          <p class="contact-copy">
+            I'm open to ML / LLM engineering internships, research collaborations, and hard
+            extraction problems. Email is the fastest way to reach me.
+          </p>
+          <div class="contact-actions">
+            <a class="btn btn-primary btn-large" href="mailto:ajaiimukundh@gmail.com">ajaiimukundh@gmail.com <span aria-hidden="true">↗</span></a>
+            <a class="btn btn-ghost" href="https://linkedin.com/in/jaiim659433507" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a>
+            <a class="btn btn-ghost" href="https://github.com/JaiiMukundh" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+          </div>
+          <p class="contact-meta">Bengaluru, India · IST (UTC+5:30)</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> Jaii Mukundh A</p>
+      <p class="footer-note">Built with plain HTML, CSS, and JS. No frameworks, no build step.</p>
+      <a class="footer-top" href="#home">Back to top <span aria-hidden="true">↑</span></a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
